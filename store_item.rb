@@ -27,8 +27,10 @@
 #update
 #quit
 
-class Item
+class Item 
 
+  attr_reader :item_name, :item_color, :item_price
+  attr_writer :item_name, :item_color, :item_price
   def initialize(input_item_name, input_item_color, input_item_price)
     @item_name = input_item_name
     @item_color = input_item_color
@@ -38,3 +40,4 @@ class Item
 end
 
 dress = Item.new("dress", "red", 100)
+p dress.item_name
