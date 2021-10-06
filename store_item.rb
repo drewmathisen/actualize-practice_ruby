@@ -31,13 +31,17 @@ class Item
 
   attr_reader :item_name, :item_color, :item_price
   attr_writer :item_name, :item_color, :item_price
-  def initialize(input_item_name, input_item_color, input_item_price)
-    @item_name = input_item_name
-    @item_color = input_item_color
-    @item_price = input_item_price
+
+  def initialize(input_item_options)
+    @item_name = input_item_options[:item_name]
+    @item_color = input_item_options[:item_color]
+    @item_price = input_item_options[:item_price]
   end
 
 end
 
-dress = Item.new("dress", "red", 100)
+dress = Item.new(item_name:"dress", item_color: "red", item_price: 100)
+shirt = Item.new(item_name:"shirt", item_color: "green", item_price: 80)
+
 p dress.item_name
+p shirt.item_color
